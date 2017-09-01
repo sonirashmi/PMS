@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" 
+  "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- Mapping for baseTemplate Page -->
+	<definition id="baseTemplate" name="baseTemplate"
+		template="\WEB-INF\layout\baseLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"></put-attribute>
+		<put-attribute name="menu" value="/WEB-INF/layout/menu.jsp"></put-attribute>
+		<put-attribute name="body" value="${body}"></put-attribute>
+	</definition>
+
+	<definition id="baseTemplate1" name="baseTemplate1"
+		template="\WEB-INF\layout\BaseLayout1.jsp">
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp"></put-attribute>
+		<put-attribute name="body" value="${body}"></put-attribute>
+	</definition>
+
+	<!-- Mapping for Welcome Page -->
+	<definition id="welcome" name="welcome" extends="baseTemplate1">
+		<put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Mapping for Registration Page -->
+	<definition id="register" name="register" extends="baseTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/Registration.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Mapping for Login Page -->
+	<definition id="login" name="login" extends="baseTemplate">
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp"></put-attribute>
+	</definition>
+	<!-- Mapping for Project details Page -->
+	<definition id="project" name="project" extends="baseTemplate1">
+		<put-attribute name="body" value="/WEB-INF/jsp/ProjectDetails.jsp"></put-attribute>
+	</definition>
+	<!-- Mapping for Project details Page -->
+	<definition id="editProject" name="editProject" extends="baseTemplate1">
+		<put-attribute name="body" value="/WEB-INF/jsp/updateProject.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>
